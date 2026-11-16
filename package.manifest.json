@@ -1,11 +1,11 @@
 {
-  "package_id": "lawnotation.summarization",
+  "package_id": "summarization",
   "package_version": "0.1.0",
   "package_type": "legalblocks.module_package",
   "artifact_types": [
     {
-      "id": "lawnotation.summary_layer",
-      "label": "summary_layer",
+      "id": "summary-layer",
+      "label": "summary-layer",
       "color": "#7B4F9E",
       "short": "summary"
     }
@@ -18,19 +18,19 @@
       "glyph": "∑",
       "family": "processing",
       "display": {
-        "sub": "summary_layer · extractive / abstractive",
+        "sub": "summary-layer · extractive / abstractive",
         "note": "Generates document summaries via legal-summarizer-service"
       },
       "inputs": [
         {
           "port_id": "text_layer",
-          "artifact_type": "lawnotation.text_layer"
+          "artifact_type": "text-layer"
         }
       ],
       "outputs": [
         {
           "port_id": "summary_layer",
-          "artifact_type": "lawnotation.summary_layer"
+          "artifact_type": "summary-layer"
         }
       ],
       "configuration": {

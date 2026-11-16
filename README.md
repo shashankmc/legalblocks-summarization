@@ -2,12 +2,12 @@
 
 > Generates document summaries via legal-summarizer-service
 
-**LegalBlocks module package** `lawnotation.summarization` v0.1.0
+**LegalBlocks module package** `summarization` v0.1.0
 
 - **Execution**: backend
 - **Entrypoint**: `src/ui/Component.vue`
-- **Inputs**: `lawnotation.text_layer`
-- **Outputs**: `lawnotation.summary_layer`
+- **Inputs**: `text-layer`
+- **Outputs**: `summary-layer`
 
 ## Configuration
 

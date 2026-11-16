@@ -153,7 +153,7 @@ async function run() {
     // Emit the summary_layer artifact for downstream canvas connections
     emit('output', {
       port_id:       'summary_layer',
-      artifact_type: 'lawnotation.summary_layer',
+      artifact_type: 'summary-layer',
       schema_version: '1.0.0',
       payload: {
         summary:    text,
@@ -162,7 +162,7 @@ async function run() {
         length:     selectedLength.value,
       },
       lineage: {
-        produced_by_package: 'lawnotation.summarization',
+        produced_by_package: 'summarization',
         produced_by_module:  'summarization',
       },
     })
