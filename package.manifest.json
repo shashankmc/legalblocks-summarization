@@ -1,0 +1,82 @@
+{
+  "package_id": "lawnotation.summarization",
+  "package_version": "0.1.0",
+  "package_type": "legalblocks.module_package",
+  "artifact_types": [
+    {
+      "id": "lawnotation.summary_layer",
+      "label": "summary_layer",
+      "color": "#7B4F9E",
+      "short": "summary"
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "summarization",
+      "label": "Summarization",
+      "category": "nlp",
+      "glyph": "∑",
+      "family": "processing",
+      "display": {
+        "sub": "summary_layer · extractive / abstractive",
+        "note": "Generates document summaries via legal-summarizer-service"
+      },
+      "inputs": [
+        {
+          "port_id": "text_layer",
+          "artifact_type": "lawnotation.text_layer"
+        }
+      ],
+      "outputs": [
+        {
+          "port_id": "summary_layer",
+          "artifact_type": "lawnotation.summary_layer"
+        }
+      ],
+      "configuration": {
+        "parameters": [
+          {
+            "name": "service_url",
+            "type": "string",
+            "label": "Service URL",
+            "default": "http://legal-summarizer-service:8000"
+          },
+          {
+            "name": "model",
+            "type": "enum",
+            "label": "Model",
+            "default": "lex_rank",
+            "options": [
+              "lex_rank",
+              "lsa",
+              "text_rank",
+              "luhn",
+              "edmundson",
+              "hf:sshleifer/distilbart-cnn-12-6",
+              "hf:facebook/bart-large-cnn",
+              "hf:yhavinga/ul2-large-dutch"
+            ]
+          },
+          {
+            "name": "summary_length",
+            "type": "enum",
+            "label": "Length",
+            "default": "medium",
+            "options": ["short", "medium", "long"]
+          },
+          {
+            "name": "api_key",
+            "type": "string",
+            "label": "API key (leave empty if auth is disabled)",
+            "default": ""
+          }
+        ]
+      },
+      "execution": {
+        "type": "backend",
+        "entrypoint": "src/ui/Component.vue"
+      },
+      "permissions": ["read_documents"]
+    }
+  ]
+}

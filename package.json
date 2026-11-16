@@ -1,0 +1,30 @@
+{
+  "name": "@legalblocks/summarization",
+  "version": "0.1.0",
+  "description": "Generates document summaries via legal-summarizer-service",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "legalblocks": {
+    "package_id": "lawnotation.summarization",
+    "manifest": "package.manifest.json",
+    "execution_type": "backend",
+    "provides_screen": null
+  },
+  "main": "src/ui/Component.vue",
+  "files": [
+    "package.manifest.json",
+    "src",
+    "pages",
+    "*.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"no tests\" && exit 0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@lawnotation/module-sdk": "^1.0.0",
+    "typescript": "^5.4.0"
+  }
+}
